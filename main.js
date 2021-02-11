@@ -30,9 +30,23 @@ document.getElementById("calculate").addEventListener("click", function () {
     const outputActualInvestUnitFund = getInputNumber("output-actual-invest-unit-fund");
     document.getElementById("output-actual-invest-dps").value = outputActualInvestUnitFund;
     document.getElementById("output-maximum-investment-unit-fund").value = minValue;
-
+    let saveTaxUnit = 0;
+    let saveTaxDPS = 0;
+    const outputMaximumInvestUnitFund = getInputNumber("output-maximum-investment-unit-fund");
+    const outputMaximumInvestDPS = getInputNumber("output-maximum-investment-dps");
+  
     if (income > 1500000) {
-        
+        saveTaxUnit = outputMaximumInvestUnitFund * .1;
+        saveTaxDPS = outputMaximumInvestDPS * .1;
+        console.log("if", saveTax);
+        document.getElementById("output-save-tax-unit-fund").value = saveTax;
+        document.getElementById("output-save-tax-dps").value = saveTaxDPS;
+    } else {
+        saveTax = outputMaximumInvestUnitFund * .15;
+        saveTaxDPS = outputMaximumInvestDPS * .15;
+        console.log("else", saveTax);
+        document.getElementById("output-save-tax-unit-fund").value = saveTax;
+        document.getElementById("output-save-tax-dps").value = saveTaxDPS;
     }
 
 })
