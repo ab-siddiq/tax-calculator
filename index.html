@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="tax-calculator">
+        <div class="container">
+            <div class="grid">
+                <div class="grid-child">
+                    <div class="text-center pb-5">
+                        <h2 class="text-capitalize">tax calculator</h2>
+                    </div>
+                    <div class="">
+                        <div class="mb-3 row">
+                            <label for="staticEmail" class="col-6 col-form-label">Your Good Name Please</label>
+                            <div class="col-6">
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="" class="col-6 col-form-label">Your actual investment for tax rebate</label>
+                            <div class="col-6">
+                                <input type="number" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="" class="col-6 col-form-label">Your total income</label>
+                            <div class="col-6">
+                                <input type="number" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="" class="col-6 col-form-label">Your Annual Taxable Income (BDT)</label>
+                            <div class="col-6">
+                                <input type="number" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="" class="col-6 col-form-label">Your Maximum Allowable Investment for Tax Rebate
+                                (BDT)</label>
+                            <div class="col-6">
+                                <input type="number" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class=" mb-3 ">
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-primary ">calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Ekush First Unit Fund</th>
+                                    <th scope="col">DPS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Actual investment</td>
+                                    <td>
+                                        <input type="number" class="form-control" placeholder="100000">
+                                    </td>
+                                    <td>
+                                        <input type="number" class="form-control" placeholder="100000">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Maximum Eligible Investment for Tax Rebate (BDT)</td>
+                                    <td>
+                                        <input type="number" class="form-control" placeholder="100000">
+                                    </td>
+                                    <td>
+                                        <input type="number" class="form-control" placeholder="100000">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>You can save Tax Amounting to (BDT)</td>
+                                    <td>
+                                        <input type="number" class="form-control" placeholder="100000">
+                                    </td>
+                                    <td>
+                                        <input type="number" class="form-control" placeholder="100000">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Return through Tax Savings</td>
+                                    <td>
+                                        <input type="number" class="form-control" placeholder="100000">
+                                    </td>
+                                    <td>
+                                        <input type="number" class="form-control" placeholder="100000">
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center">
+                        <p class="">
+                            Based on your Taxable Income and total income, If you Invest the Maximum Allowable Investment of BDT <span id="">300000</span> for tax rebate in Ekush First Unit Fund, <span id="">45000</span> in taxes, implicitly earn <span id="">5%</span> on your investment merely through tax savings.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
