@@ -1,7 +1,15 @@
-
+let taxForm = document.getElementById("tax-form");
+taxForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
+})
+let taxFormOutput = document.getElementById("tax-form-output");
+taxForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
+})
 function taxCalculation() {
     // const nameInput = getInputNumber("tax-name-input");
     // console.log(nameInput);
+    console.log("cliked");
     const invest = getInputNumber("tax-actual-invest");
     const income = getInputNumber("tax-total-income");
     const taxableIncome = getInputNumber("tax-annual-taxable-income");
@@ -14,7 +22,7 @@ function taxCalculation() {
     document.getElementById("output-actual-invest-unit-fund").value = invest;
 
     const outputSaveTaxUnitFund = getInputNumber("output-save-tax-unit-fund");
-    console.log(outputSaveTaxUnitFund,"kasdf");
+    
     const outputSaveTaxDPS = getInputNumber("output-save-tax-dps");
 
     const outputActualInvestUnitFund = getInputNumber("output-actual-invest-unit-fund");
@@ -42,15 +50,14 @@ function taxCalculation() {
         document.getElementById("output-save-tax-dps").value = saveTaxDPS;
     }
 
-    // const outputReturnTaxUnitFund = Math.ceil((saveTaxUnit/outputActualInvestUnitFund)*10);
-    // const outputReturnTaxDPS = Math.ceil((saveTaxDPS / outputActualInvestUnitFund)*10);
+   
     const divideTaxUnit = (saveTaxUnit / outputActualInvestUnitFund);
     const divideTaxDPS = (saveTaxDPS / outputActualInvestUnitFund);
     const multiplyTaxUnit = divideTaxUnit * 100;
     const multiplyTaxDPS = divideTaxDPS * 100;
     const calculateTaxUnit = Math.ceil(multiplyTaxUnit);
     const calculateTaxDPS = Math.ceil(multiplyTaxDPS);
-    // console.log(Math.ceil(a*10), Math.ceil(b*10));
+   
     console.log(calculateTaxUnit, calculateTaxDPS);
     document.getElementById("output-return-tax-unit-fund").value =calculateTaxUnit+"%";
     document.getElementById("output-return-tax-dps").value =calculateTaxDPS+"%";
@@ -72,9 +79,7 @@ function getInputNumber(id) {
     return parseInputNumber;
 }
 
-function taxReset() {
-    document.getElementById("tax-name-input").value = ""; 
-    document.getElementById("tax-actual-invest").value = ""; 
-    document.getElementById("tax-total-income").value = ""; 
-    document.getElementById("tax-annual-taxable-income").value = ""; 
-}
+// function taxReset() {
+//     document.getElementById("tax-form").reset(); 
+//     document.getElementById("tax-output").reset(); 
+// }

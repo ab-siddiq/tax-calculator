@@ -22,17 +22,17 @@
                     </div>
                     <!-- tax input -->
                     <div class="tax-input">
-                        <!-- <form action="" method="post" class="" id="tax-form"> -->
+                        <form action="" method="post" class="" id="tax-form" onsubmit="taxCalculation()">
                             <div class="mb-3 row">
                                 <label for="staticEmail" class="col-6 col-form-label">Your Good Name Please</label>
                                 <div class="col-6">
-                                    <input type="text" name="tax-input" class="form-control" id="tax-name-input" placeholder="Name">
+                                    <input type="text" name="tax-input-name" class="form-control" id="tax-name-input" placeholder="Name">
                                 </div>
                             </div>
                             <div class="mb-3 row">
                                 <label for="" class="col-6 col-form-label">Your actual investment for tax rebate</label>
                                 <div class="col-6">
-                                    <input type="number" name="tax-input" class="form-control" id="tax-actual-invest">
+                                    <input type="number" name="tax-input-actual-invest" class="form-control" id="tax-actual-invest">
                                 </div>
                             </div>
                             <div class="mb-3 row">
@@ -56,56 +56,58 @@
                             </div>
                             <div class="  ">
                                 <div class="d-flex justify-content-end">
-                                    <button onclick="taxReset()" id="reset" class="btn calculate-button mx-2">reset</button>
-                                    <button onclick="taxCalculation()" id="calculate" class="btn calculate-button mx-2">calculate</button>
+                                    <button onclick="" type="reset" id="reset" class="btn calculate-button mx-2">reset</button>
+                                    <button onclick="" type="submit" id="calculate" class="btn calculate-button mx-2">calculate</button>
                                 </div>
                             </div>
-                        <!-- </form> -->
+                        </form>
                     </div>
                     <!-- tax output -->
-                    <div class="tax-output">
-                        <div class="mb-3 row">
-                            <label for="staticEmail" class="col-6 col-form-label"></label>
-                            <label for="staticEmail" class="col-3 col-form-label "><strong> Ekush First Unit Fund </strong></label>
-                            <label for="staticEmail" class="col-3 col-form-label "><strong> DPS </strong></label>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="staticEmail" class="col-6 col-form-label">Actual investment</label>
-                            <div class="col-3">
-                                <input type="number" name="tax-input" readonly class="form-control" id="output-actual-invest-unit-fund" placeholder="">
+                    <div id="tax-output" class="tax-output">
+                        <form action="" id="tax-output-form">
+                            <div class="mb-3 row">
+                                <label for="staticEmail" class="col-6 col-form-label"></label>
+                                <label for="staticEmail" class="col-3 col-form-label "><strong> Ekush First Unit Fund </strong></label>
+                                <label for="staticEmail" class="col-3 col-form-label "><strong> DPS </strong></label>
                             </div>
-                            <div class="col-3">
-                                <input type="number" name="tax-input" readonly class="form-control" id="output-actual-invest-dps" placeholder="">
+                            <div class="mb-3 row">
+                                <label for="staticEmail" class="col-6 col-form-label">Actual investment</label>
+                                <div class="col-3">
+                                    <input type="number" name="tax-input" readonly class="form-control" id="output-actual-invest-unit-fund" placeholder="">
+                                </div>
+                                <div class="col-3">
+                                    <input type="number" name="tax-input" readonly class="form-control" id="output-actual-invest-dps" placeholder="">
+                                </div>
                             </div>
-                        </div>
-                        <!--  -->
-                        <div class="mb-3 row">
-                            <label for="" class="col-6 col-form-label">Maximum Eligible Investment for Tax Rebate (BDT)</label>
-                            <div class="col-3">
-                                <input type="number" name="tax-input" readonly class="form-control" id="output-maximum-investment-unit-fund" placeholder="">
+                            <!--  -->
+                            <div class="mb-3 row">
+                                <label for="" class="col-6 col-form-label">Maximum Eligible Investment for Tax Rebate (BDT)</label>
+                                <div class="col-3">
+                                    <input type="text" name="tax-input" readonly class="form-control" id="output-maximum-investment-unit-fund" placeholder="">
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" name="tax-input" readonly class="form-control" id="output-maximum-investment-dps" placeholder="" value="60000">
+                                </div>
                             </div>
-                            <div class="col-3">
-                                <input type="number" name="tax-input" readonly class="form-control" id="output-maximum-investment-dps" placeholder="" value="60000">
+                            <div class="mb-3 row">
+                                <label for="" class="col-6 col-form-label">You can save Tax Amounting to (BDT)</label>
+                                <div class="col-3">
+                                    <input type="text" readonly class="form-control" id="output-save-tax-unit-fund" placeholder="">
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" readonly class="form-control" id="output-save-tax-dps" placeholder="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="" class="col-6 col-form-label">You can save Tax Amounting to (BDT)</label>
-                            <div class="col-3">
-                                <input type="number" readonly class="form-control" id="output-save-tax-unit-fund" placeholder="">
+                            <div class="mb-3 row">
+                                <label for="" class="col-6 col-form-label">Return through Tax Savings</label>
+                                <div class="col-3">
+                                    <input type="text" readonly class="form-control" id="output-return-tax-unit-fund" placeholder="">
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" readonly class="form-control" id="output-return-tax-dps" placeholder="">
+                                </div>
                             </div>
-                            <div class="col-3">
-                                <input type="number" readonly class="form-control" id="output-save-tax-dps" placeholder="">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="" class="col-6 col-form-label">Return through Tax Savings</label>
-                            <div class="col-3">
-                                <input type="text" readonly class="form-control" id="output-return-tax-unit-fund" placeholder="">
-                            </div>
-                            <div class="col-3">
-                                <input type="text" readonly class="form-control" id="output-return-tax-dps" placeholder="">
-                            </div>
-                        </div>
+                        </form>
                        
                     </div>
                     <div class="text-center tax-summary">
