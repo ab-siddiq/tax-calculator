@@ -10,31 +10,31 @@ function taxCalculation() {
     // const nameInput = getInputNumber("tax-name-input");
     // console.log(nameInput);
     console.log("cliked");
-    const invest = getInputNumber("tax-actual-invest");
-    const income = getInputNumber("tax-total-income");
-    const taxableIncome = getInputNumber("tax-annual-taxable-income");
-    const allowableInvestment = getInputNumber("tax-maximum-allowable-investment");
+    let invest = getInputNumber("tax-actual-invest");
+    let income = getInputNumber("tax-total-income");
+    let taxableIncome = getInputNumber("tax-annual-taxable-income");
+    let allowableInvestment = getInputNumber("tax-maximum-allowable-investment");
     // console.log(allowableInvestment);
 
-    const minValue = Math.min(invest, taxableIncome * .25, 1500000);
+    let minValue = Math.min(invest, taxableIncome * .25, 1500000);
 
     document.getElementById("tax-maximum-allowable-investment").value = minValue;
     document.getElementById("output-actual-invest-unit-fund").value = invest;
 
-    const outputSaveTaxUnitFund = getInputNumber("output-save-tax-unit-fund");
+    let outputSaveTaxUnitFund = getInputNumber("output-save-tax-unit-fund");
     
-    const outputSaveTaxDPS = getInputNumber("output-save-tax-dps");
+    let outputSaveTaxDPS = getInputNumber("output-save-tax-dps");
 
-    const outputActualInvestUnitFund = getInputNumber("output-actual-invest-unit-fund");
-    const outputActualInvestDPS = getInputNumber("output-actual-invest-dps");
+    let outputActualInvestUnitFund = getInputNumber("output-actual-invest-unit-fund");
+    let outputActualInvestDPS = getInputNumber("output-actual-invest-dps");
 
     document.getElementById("output-actual-invest-dps").value = outputActualInvestUnitFund;
     document.getElementById("output-maximum-investment-unit-fund").value = minValue;
 
     let saveTaxUnit = 0;
     let saveTaxDPS = 0;
-    const outputMaximumInvestUnitFund = getInputNumber("output-maximum-investment-unit-fund");
-    const outputMaximumInvestDPS = getInputNumber("output-maximum-investment-dps");
+    let outputMaximumInvestUnitFund = getInputNumber("output-maximum-investment-unit-fund");
+    let outputMaximumInvestDPS = getInputNumber("output-maximum-investment-dps");
   
     if (income > 1500000) {
         saveTaxUnit = outputMaximumInvestUnitFund * .1;
@@ -51,12 +51,8 @@ function taxCalculation() {
     }
 
    
-    const divideTaxUnit = (saveTaxUnit / outputActualInvestUnitFund);
-    const divideTaxDPS = (saveTaxDPS / outputActualInvestUnitFund);
-    const multiplyTaxUnit = divideTaxUnit * 100;
-    const multiplyTaxDPS = divideTaxDPS * 100;
-    const calculateTaxUnit = Math.ceil(multiplyTaxUnit);
-    const calculateTaxDPS = Math.ceil(multiplyTaxDPS);
+    let calculateTaxUnit = Math.ceil((saveTaxUnit / outputActualInvestUnitFund)*100);
+    let calculateTaxDPS = Math.ceil((saveTaxDPS / outputActualInvestUnitFund)*100);
    
     console.log(calculateTaxUnit, calculateTaxDPS);
     document.getElementById("output-return-tax-unit-fund").value =calculateTaxUnit+"%";
@@ -74,8 +70,8 @@ function taxCalculation() {
     
 // }
 function getInputNumber(id) {
-    const inputNumber = document.getElementById(id).value;
-    const parseInputNumber = parseFloat(inputNumber);
+    let inputNumber = document.getElementById(id).value;
+    let parseInputNumber = parseFloat(inputNumber);
     return parseInputNumber;
 }
 
